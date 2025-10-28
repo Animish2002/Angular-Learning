@@ -1,0 +1,39 @@
+-main.ts file compiles the whole code into js file
+
+-and that complied code is passed in the index.html main file , and it is done 
+ by angular CLI it injects the code in the html file.
+
+-for new project created in main.ts file the App component is been passed 
+and inside of App component there is component been created a custom HTML Element
+
+@Component contains some decelarations used by angular
+1. HTML template that controls  what renders in the DOM
+2. CSS selector => defines how the component is used in HTML
+3. Typescript class with behaviours for elements like inputs and actions or api req
+
+
+3 files working together html, css, ts 
+
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+
+
+- selector => helps to create a custom HTML element that can be used anywhere in the code like here app-root is used in 
+            index.html main file as " <app-root></app-root> "
+
+- imports => tells Angular what external features (components, directives, or pipes) your component’s template will use.
+
+- templateUrl => used to import the html file that we have create for the page
+
+- styleUrl => the stylesheet that we have created for the html file 
+
+RouterOutlet is a directive/component provided by Angular Router that acts as a placeholder in your template.
+           It tells Angular where to display the component for the current route (the page you’re visiting).
+           Think of it as a “screen area” where your pages appear when you navigate.
+
+    ********** RouterOutlet itself doesn’t define routes, but it’s the place where routes are displayed.********
