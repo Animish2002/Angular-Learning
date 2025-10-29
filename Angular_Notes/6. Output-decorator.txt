@@ -1,7 +1,11 @@
 @Input() → parent → child (passing data down)
 @Output() → child → parent (sending event/data up)
 
-@Output() select = new EventEmitter();   //declaration 
+@Output() select = new EventEmitter();   //declaration  (default way)
 
 -EventEmitter is a special Angular class that lets a child component send out (emit) custom events.
 -like in as a pipe or channel through which the child can talk to the parent.(part of angular core)
+
+more simple way of implementing or creating a custom event will be
+
+select = output<string>();   //just need to pass the type of event withing "<>"
