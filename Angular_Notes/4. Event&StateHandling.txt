@@ -1,0 +1,30 @@
+To add events in the html doc 
+directly add it in the elements tag withing () close brackets
+there are different types of events that can be add 
+(click), (close) ,(copy), (abort), (search) and ,many more
+
+the function for that event need to be added in the exported component just like the 
+data passing implemenation 
+
+
+Zone.js is the one in angular that listens to all the events in the application that occur
+or there is also Signals to notify angular about the changes and updates in state 
+
+
+******************************SIGNALS*********************************
+
+A signal is a container/object that stores a value (any value, including nested objects ) 
+and singal tell angular weather if there is change in the state
+
+it is same to react's useState
+
+1. how you store state 
+=>    selectedUser = signal(randoemUser)
+2. how to read state    
+=>    selectedUser()
+3. how to update state
+=>    selectedUser.set(newUser);
+
+
+to set the value of a writable signal we use .set()
+to update the value we use .get()

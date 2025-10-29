@@ -1,0 +1,16 @@
+for rendering dynamic data into html document
+
+we can pass that data via the export component class that we create in component.ts file 
+create a direct variable dont need to add let , var or const 
+and pass in the values to that variable and  that can be  directly used in the html and 
+passed via the string/object selector
+
+{{ variableName.id or variableName.name}} etc
+for image element it is different 
+
+not like   <img src="{{selectedUser.avatar}}" alt="">   // using String Interpolation
+
+but instead use it in this way know as 
+
+           <img [src]="'assets/users/'+selectedUser.avatar" [alt]="selectedUser.name" />   //using Property Binding
+
