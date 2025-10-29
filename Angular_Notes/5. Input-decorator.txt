@@ -1,0 +1,34 @@
+@Input() → parent → child (passing data down)
+@Output() → child → parent (sending event/data up)
+
+@Input() is a decorator that allows a child component to receive data from its parent component —
+basically, it’s how we pass props in Angular.
+
+Overall flow and working of @Input decorator 
+
+1. we pass the dummy data file from the app.ts file (parent component).
+
+2. that dummy data is used to pass data to the child component using the @Input() decorator.
+
+3. in the user.ts file (child), we define @Input() for the values we want to receive — 
+   like avatar and name.
+
+4. this allows the parent to send the values to the child component through the selector 
+   (like <app-user [avatar]="user.avatar" [name]="user.name">).
+
+5. we don’t need to use signal for this because the data is static and coming directly from the parent.
+
+6. in the user.html, we can directly use string interpolation to show the values passed — for example:
+
+<img [src]="'assets/users/' + avatar" />
+<span>{{ name }}</span>
+
+
+6. since we’ve already imported the dummy data in app.ts, we don’t need to import it 
+   again inside user.ts.
+
+7. the data flow is parent → child, meaning the parent controls what data is passed, and the 
+   child just displays it.
+
+8. also to check if the all values are been passed or not we can also use the ({required: true})
+    which means the values of the @Input must be passed in the custom selector 

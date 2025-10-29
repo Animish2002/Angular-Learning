@@ -14,7 +14,7 @@ and inside of App component there is component been created a custom HTML Elemen
 
 3 files working together html, css, ts 
 
-
+this @Component is a decorator in angular
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
