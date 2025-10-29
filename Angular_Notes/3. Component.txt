@@ -1,0 +1,31 @@
+create a Component by importing it from the angular core
+where we can passin in the html file template via url and
+the css url  as well with the styleUrls: ['./cssFileName.css']
+
+How a component is rendered on the screen =>
+1.   app.ts is the main fil
+
+2.   to render our header or any other component, we can add it in the app.html file by 
+     adding the custom selector that we created in the header.ts file inside of @Component
+
+3.   Also for creating the html document  for the header component dont need the html, body , 
+     or other urls there directly start writting the code for the frontedn ui 
+
+4.   Create folders for the component specific for better file management
+
+5.   also need to import the component inside app.ts for rendering it onto the page
+
+
+to create a component via cli command to use is 
+
+*************ng g c "component name"**************
+
+or 
+
+*************ng generate component "component name"************
+
+u will get 4 files generated 
+CREATE src/app/user/user.spec.ts (537 bytes)
+CREATE src/app/user/user.ts (189 bytes)           // for automated testing purposes
+CREATE src/app/user/user.css (0 bytes)
+CREATE src/app/user/user.html (20 bytes)
