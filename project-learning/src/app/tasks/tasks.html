@@ -4,14 +4,10 @@
   </header>
 
   <ul>
-    @for (task of selectedUserTasks; track task.id) {
-      <li>
-        <app-task
-          [title]="task.title"
-          [summary]="task.summary"
-          [dueDate]="task.dueDate"
-        />
-      </li> 
-    }
+    <li *ngFor="let task of selectedUserTasks; trackBy: trackTask">
+      <app-task
+        [tasks]="task"
+        (complete)="onCompleteTask($event)"/>
+    </li> 
   </ul>
 </section>

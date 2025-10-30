@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header';
 import { User } from "./user/user";
 import { DUMMY_USERS } from "./data/dummy-users";
@@ -24,6 +24,5 @@ export class App {
   onUserSelected(user: { id: string; name: string }) {
     this.selectedUserId = user.id;
     this.selectedUserName = user.name;
-    
   }
 }
