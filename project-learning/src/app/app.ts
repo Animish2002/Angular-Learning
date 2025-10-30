@@ -2,18 +2,27 @@ import { Component, signal } from '@angular/core';
 import { HeaderComponent } from './header/header';
 import { User } from "./user/user";
 import { DUMMY_USERS } from "./data/dummy-users";
+import { Tasks } from './tasks/tasks';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, User],
+  imports: [HeaderComponent, User,Tasks,CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 
+
+
 export class App {
-  protected readonly title = signal('project-learning');
+ 
   users = DUMMY_USERS;
-  onselectedUser(id: string) {
-    console.log("User with id "+id+" clicked");
+  selectedUserName: string = '';
+  selectedUserId:string = '';
+
+
+  onUserSelected(user: { id: string; name: string }) {
+    this.selectedUserId = user.id;
+    this.selectedUserName = user.name;
   }
 }

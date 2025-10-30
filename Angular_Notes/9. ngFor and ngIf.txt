@@ -1,0 +1,16 @@
+  <!-- Property binding of the child component -->
+    @if (selectedUserName) {
+    <app-tasks [name]="selectedUserName"></app-tasks>
+    } @else{
+    <p>No user selected</p>
+    }
+  </div>
+
+  and also can be used as @for for for loops
+
+
+olderways of doing it 
+
+ngFor AND ngIF
+
+*ngFor = "let user from users"

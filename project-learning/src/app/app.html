@@ -2,37 +2,17 @@
 
 <main>
   <ul id="users">
-    <li>
+    <li *ngFor="let user of users">
       <app-user
-        [id]="users[0].id"
-        [avatar]="users[0].avatar"
-        [name]="users[0].name"
-        (select)="onselectedUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[1].id"
-        [avatar]="users[1].avatar"
-        [name]="users[1].name"
-        (select)="onselectedUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[2].id"
-        [avatar]="users[2].avatar"
-        [name]="users[2].name"
-        (select)="onselectedUser($event)"
-      />
-    </li>
-    <li>
-      <app-user
-        [id]="users[3].id"
-        [avatar]="users[3].avatar"
-        [name]="users[3].name"
-        (select)="onselectedUser($event)"
-      />
+        [id]="user.id"
+        [avatar]="user.avatar"
+        [name]="user.name"
+        (select)="onUserSelected($event)"
+      ></app-user>
     </li>
   </ul>
+
+  <div *ngIf="selectedUserId">
+    <app-tasks [id]="selectedUserId" [name]="selectedUserName"></app-tasks>
+  </div>
 </main>

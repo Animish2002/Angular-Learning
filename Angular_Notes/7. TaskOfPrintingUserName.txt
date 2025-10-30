@@ -1,0 +1,25 @@
+Here we want to display user name on the right side when we click on user 
+
+here the task is the child component and the user is the parent component 
+the parent can pass the data to child with @Input decorator
+
+the name is passed form app to task here via @Input
+
+to show name need to use EventEmitter to pass the name 
+
+
+to use ngFor need to import CommonModule in imports
+
+
+1. In App.ts create a vaiable name selectedUser of type string
+2. pass the value of the selectedUser from the dummydata when event is triggered for 
+    that user i.e when clicked on it 
+    this.selectedUser = name
+3. in task.ts declare @Input decorator
+4. and then pass the value in task.html via Interpolation {{ name }}
+5. and in the app.html add the selector of task and 
+
+When you write:  (property binding )
+    <app-tasks [name]="selectedUser"></app-tasks>
+    [name] is the Input property of the child component (the key).
+    "selectedUser" is the parent variable (the value).

@@ -1,0 +1,25 @@
+we can add objects inside of the @Input instead of adding each value of the data
+
+we did it in this way before 
+@Input({required : true}) name! :string
+@Input({required : true}) id! : string   //here ! checking if the value is null at runtime 
+etc
+
+can be implemented with objects in the below way=>
+
+@Input({ required:true }) user! : {
+    id: string,
+    name: string,
+    avatar: string,
+} 
+
+
+also instead we can create interface as well at the top of the CommonModule
+interface User{
+    id: string,
+    name: string,
+    avatar: string,
+}
+
+and to use in @Input decorator use
+@Input({required:true}) user!: User;

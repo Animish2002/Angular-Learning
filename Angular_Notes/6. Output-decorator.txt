@@ -9,3 +9,5 @@
 more simple way of implementing or creating a custom event will be
 
 select = output<string>();   //just need to pass the type of event withing "<>"
+
+<> => it is generics in ts used to define generic types
