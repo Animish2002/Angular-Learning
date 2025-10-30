@@ -8,6 +8,7 @@
         [avatar]="user.avatar"
         [name]="user.name"
         (select)="onUserSelected($event)"
+        [selected]="user.id === selectedUserId"
       ></app-user>
     </li>
   </ul>

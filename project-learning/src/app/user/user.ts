@@ -11,6 +11,7 @@ import { Component ,EventEmitter,Input, Output} from '@angular/core';
 export class User {
   @Input({required:true}) avatar!: string;
   @Input({required:true}) name!: string;
+  @Input({required:true}) selected!: boolean;
   @Input() id!: string;
   @Output() select = new EventEmitter<{ id: string; name: string }>();   //most used and standard way of using output function, here we create eventEmitter object manually here
 

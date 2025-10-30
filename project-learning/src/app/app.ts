@@ -24,5 +24,6 @@ export class App {
   onUserSelected(user: { id: string; name: string }) {
     this.selectedUserId = user.id;
     this.selectedUserName = user.name;
+    
   }
 }
