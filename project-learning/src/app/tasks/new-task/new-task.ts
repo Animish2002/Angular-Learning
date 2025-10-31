@@ -11,18 +11,18 @@ export class NewTask {
   @Output() cancel = new EventEmitter<void>();
   @Output() add = new EventEmitter<any>();
 
-  // onSubmit(form: any) {
-  //   const newTask = {
-  //     id: Math.random().toString(),
-  //     title: form.value.title,
-  //     summary: form.value.summary,
-  //     dueDate: form.value['due-date'],
-  //     userId: 'someUserId' // you can pass this as @Input() later
-  //   };
-  //   this.add.emit(newTask);
-  // }
+  onSubmit(form: any) {
+    const newTask = {
+      id: Math.random().toString(),
+      title: form.value.title,
+      summary: form.value.summary,
+      dueDate: form.value['due-date'],
+      userId: 'someUserId' 
+    };
+    this.add.emit(newTask);
+  }
 
-  onCancel() {
+  onCancelTask() {
     this.cancel.emit();
   }
 }

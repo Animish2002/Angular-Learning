@@ -12,5 +12,5 @@
     </li>
   </ul>
 
-  <app-new-task *ngIf="isAddingTask" />
+  <app-new-task *ngIf="isAddingTask" (cancel)="onCancelTask()" />
 </section>
