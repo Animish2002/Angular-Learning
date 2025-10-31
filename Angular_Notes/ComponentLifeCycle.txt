@@ -1,0 +1,7 @@
+The different Stages of a angular component lifecycle are
+
+a. creation
+b. change detection
+c. rendering
+d. destruction
+     

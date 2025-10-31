@@ -29,6 +29,7 @@ export class Tasks {
 
   onCompleteTask(id:string){
      this.tasks = this.tasks.filter(task => task.id !== id);
+     //here keep only though tasks whose id is not what i clicked on for complete
   }
 
   onAddTask(taskData: {title:string, summary:string, date:string}) {

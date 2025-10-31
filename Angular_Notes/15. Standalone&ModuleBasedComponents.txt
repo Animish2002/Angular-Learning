@@ -1,0 +1,9 @@
+-Standalone components dont require ngModule and dont depend on ngModule for operations 
+ they manage there own dependencies, styles, and functionalities
+-Standalone components can directly import other nessary features inside the @Component
+ decorator and dont require ngModule to do so
+ 
+
+ Modules based components
+
+- 
