@@ -1,0 +1,15 @@
+Angular has a Dependency Injection system built into its Injector mechanism.
+
+A shared dependency is something that:
+    - Many parts of your app need to use, and
+    - It doesn’t make sense for every component to create its own copy.
+
+
+| Concept           | Explanation                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| **Dependency**    | A class or service another class needs.                          |
+| **Injection**     | Providing that dependency automatically.                         |
+| **@Injectable()** | Marks a class as available for DI.                               |
+| **Injector**      | The system responsible for creating and delivering dependencies. |
+
+An example of shared service can be AuthService

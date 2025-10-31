@@ -1,0 +1,5 @@
+Done with 2 way binding
+
+Directives => used for taking in informations from the input fields 
+A element enhancement  that helps with  extracting (or changing ) user input values
+ngModel

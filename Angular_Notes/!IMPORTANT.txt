@@ -1,0 +1,15 @@
+($event) is a special variable that represents the event object of a DOM. 
+
+
+(EventEmitter) is the mechanism through which a child component can notify its parent 
+component about an event or a change in its state.
+
+@component contains the configurations for that component , it is nothing but a custom html element
+
+to showcase dynamic data it can be done via the various template binding syntaxes
+a. string interpolation
+b. property binding
+c. event binding 
+d. 2 way binding (used within form inputs) allows to listen on changes and also send back data into the input
+angular.json ensures that the Angular CLI knows how to build your application, 
+which environments to use, and what optimizations to apply.

@@ -1,28 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component,Output,EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-new-task',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './new-task.html',
   styleUrl: './new-task.css',
 })
 export class NewTask {
   @Output() cancel = new EventEmitter<void>();
-  @Output() add = new EventEmitter<any>();
+  @Output() add = new EventEmitter<{ title: string; summary: string; date: string }>();
 
-  onSubmit(form: any) {
-    const newTask = {
-      id: Math.random().toString(),
-      title: form.value.title,
-      summary: form.value.summary,
-      dueDate: form.value['due-date'],
-      userId: 'someUserId' 
-    };
-    this.add.emit(newTask);
-  }
+  enteredTitle = '';
+  enteredSummary = '';
+  enteredDate = '';
 
   onCancelTask() {
     this.cancel.emit();
+  }
+
+  onSubmit() {
+    this.add.emit({
+      title: this.enteredTitle,
+      summary: this.enteredSummary,
+      date: this.enteredDate,
+    });
   }
 }

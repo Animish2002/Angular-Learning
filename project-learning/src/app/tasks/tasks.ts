@@ -31,9 +31,16 @@ export class Tasks {
      this.tasks = this.tasks.filter(task => task.id !== id);
   }
 
-  onAddTask(event: Event) {
-  event.stopPropagation();  // 🧱 stops parent click
-  this.isAddingTask = true;
+  onAddTask(taskData: {title:string, summary:string, date:string}) {
+    this.tasks.push({
+      id: new Date().getTime().toString(),
+      userId: this.id,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.date,
+    })
+
+        this.isAddingTask=false;
 }
 
   onCancelTask(){

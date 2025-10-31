@@ -2,7 +2,7 @@
   <header>
     <h2>{{ name }}'s Tasks</h2>
     <menu>
-      <button (click)="onAddTask($event)">Add Task</button>
+      <button (click)="isAddingTask = true">Add Task</button>
     </menu>
   </header>
 
@@ -12,5 +12,9 @@
     </li>
   </ul>
 
-  <app-new-task *ngIf="isAddingTask" (cancel)="onCancelTask()" />
+  <app-new-task
+    *ngIf="isAddingTask"
+    (cancel)="onCancelTask()"
+    (add)="onAddTask($event)"
+  />
 </section>
