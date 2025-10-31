@@ -1,0 +1,52 @@
+Angular does not fetch HTML files separately from the server at runtime
+
+****During Build Time
+1. The Angular compiler (AOT or JIT) reads each component’s .ts, .html, and .css files.
+2. It combines them into optimized JavaScript bundles.
+3. So your HTML templates become part of the final compiled JavaScript.
+
+
+****At Runtime (When App Runs in Browser)
+1. The browser downloads the compiled JS bundles, styles, and main index.html.
+2. The main.ts file bootstraps the AppModule.
+3. Angular creates and renders the root component (AppComponent).
+4. Angular uses the template (HTML) already embedded in that component’s compiled code.
+5. The DOM (Document Object Model) is updated based on that HTML and any bindings.
+
+
+[OLDER VERSION OF ANGULAR]
+main.ts
+│
+└── AppModule (app.module.ts)
+     │
+     └── AppComponent (app.component.ts)
+          │
+          ├── HeaderComponent (optional)
+          │
+          ├── UserComponent
+          │     └── user.component.html
+          │     └── uses @Output → send event to AppComponent
+          │
+          └── TasksComponent
+                └── tasks.component.html
+                └── uses @Input → receive data from AppComponent
+
+
+[NEWER VERSION OF ANGULAR]
+index.html
+└── main.ts
+     └── bootstrapApplication(AppComponent)
+          └── AppComponent (standalone)
+               ├── HeaderComponent
+               ├── SidebarComponent
+               └── MenuComponent
+
+
+1. The main.ts file is the entry point of the Angular app — it bootstraps (starts) the
+   root component (AppComponent), not HTML or CSS.
+2. The index.html file is loaded by the browser first and contains the <app-root> selector.
+3. Angular replaces <app-root> with the template of the AppComponent.
+4. Inside the AppComponent, there are child components such as the header, sidebar, 
+   users, and menu, which are rendered automatically.
+5. Data flow between components is managed using @Input() (for passing data from parent to child) 
+   and @Output() with EventEmitter (for sending events or data from child to parent).
