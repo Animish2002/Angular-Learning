@@ -7,3 +7,10 @@
  Modules based components
 
 - 
+
+| Concept                                            | Module-based   | Standalone       |
+| -------------------------------------------------- | -------------- | ---------------- |
+| Needs `app.module.ts`                              | ✅ Yes          | ❌ No             |
+| Declare components in module                       | ✅ Yes          | ❌ No             |
+| Import components directly inside other components | ❌ No           | ✅ Yes            |
+| Recommended in latest Angular                      | ⚠️ Older style | ✅ Yes, preferred |

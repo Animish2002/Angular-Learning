@@ -1,5 +1,25 @@
 Done with 2 way binding
 
+Point to Remember***************
+Two-way binding = Data syncs automatically between HTML input and TypeScript variable.
+
 Directives => used for taking in informations from the input fields 
 A element enhancement  that helps with  extracting (or changing ) user input values
 ngModel
+
+📊 Without 2-way binding
+
+You’d have to do this manually:
+
+<input [value]="username" (input)="username = $event.target.value">
+
+👉 [value] sends the data from component → template
+👉 (input) sends the data from template → component
+
+That’s two bindings separately — that’s why Angular gave a shortcut for both combined
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+🔁 With [(ngModel)] (2-way binding)
+<input [(ngModel)]="username">
+<p>Hello, {{ username }}!</p>

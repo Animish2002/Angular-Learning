@@ -3,14 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { Header } from './header/header';
+import { UserInput } from './user-input/user-input';
+import { FormsModule } from '@angular/forms';
+import { InvestmentResult } from './investment-result/investment-result';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    Header,
+    UserInput,
+    InvestmentResult
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CommonModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
