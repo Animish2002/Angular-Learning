@@ -3,3 +3,7 @@ ng new "project name"
 here is "ng" is the command used to interact with the Angular Command Line Interface (CLI)
 
 to start the project command is => npm start
+
+
+to create project not as a standalone component
+ng new project_name --no-standalone
