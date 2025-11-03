@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "investment_calculator": {
+    "investment-calculator": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -56,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "investment_calculator:build:production"
+              "buildTarget": "investment-calculator:build:production"
             },
             "development": {
-              "buildTarget": "investment_calculator:build:development"
+              "buildTarget": "investment-calculator:build:development"
             }
           },
           "defaultConfiguration": "development"
