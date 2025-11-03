@@ -1,5 +1,5 @@
 create a Component by importing it from the angular core
-where we can passin in the html file template via url and
+where we can pass in the html file template via url and
 the css url  as well with the styleUrls: ['./cssFileName.css']
 
 How a component is rendered on the screen =>

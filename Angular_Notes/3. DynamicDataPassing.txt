@@ -14,3 +14,13 @@ but instead use it in this way know as
 
            <img [src]="'assets/users/'+selectedUser.avatar" [alt]="selectedUser.name" />   //using Property Binding
 
+
+Dynamic data passing is also known as data binding and it has types
+1. One Way Data-Binding (data flows in a single direction i.e [Component to DOM] with Interpolation)
+    a. Property Binding
+     => Achieved with square brackets   
+    b. Event Binding
+     => Done for events with $ sign event {$event}
+
+2. Two Way Data-Binding (data flows in 2 direction i.e [Component to View to Component] with ngModel directive)
+

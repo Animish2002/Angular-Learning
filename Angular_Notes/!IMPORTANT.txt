@@ -13,3 +13,5 @@ c. event binding
 d. 2 way binding (used within form inputs) allows to listen on changes and also send back data into the input
 angular.json ensures that the Angular CLI knows how to build your application, 
 which environments to use, and what optimizations to apply.
+
+

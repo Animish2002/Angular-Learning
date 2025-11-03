@@ -1,5 +1,6 @@
 need to import it from the angular common and 
 to use | date:''
+for currency | currency "INR"
 
 
 Option	                    Examples (given in en-US locale)
@@ -15,3 +16,4 @@ Option	                    Examples (given in en-US locale)
 'mediumTime'    	            9:03:01 AM
 'longTime'     		            9:03:01 AM GMT+1
 'fullTime'                      9:03:01 AM GMT+01:00
+

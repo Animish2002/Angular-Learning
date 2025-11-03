@@ -1,8 +1,7 @@
-@Input() → parent → child (passing data down)
-@Output() → child → parent (sending event/data up)
+@Input() → parent → child (getting data down from parent to child in child )
+@Output() → child → parent (sending event/data up from child to parent in child)
 
-@Input() is a decorator that allows a child component to receive data from its parent component —
-basically, it’s how we pass props in Angular.
+
 
 Overall flow and working of @Input decorator 
 

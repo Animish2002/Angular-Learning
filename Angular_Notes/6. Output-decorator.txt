@@ -1,5 +1,6 @@
-@Input() → parent → child (passing data down)
-@Output() → child → parent (sending event/data up)
+@Input() → parent → child (getting data down from parent to child in child )
+@Output() → child → parent (sending event/data up from child to parent in child)
+
 
 @Output() select = new EventEmitter();   //declaration  (default way)
 

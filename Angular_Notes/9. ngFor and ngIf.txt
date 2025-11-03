@@ -14,3 +14,11 @@ olderways of doing it
 ngFor AND ngIF
 
 *ngFor = "let user from users"
+
+<p *ngIf="!result">Display this only when the vlue is true</p>
+
+
+<div *ngFor=(let list of lists)>
+  This will print for the values of lists can be anything
+  list.number[]
+</div>
