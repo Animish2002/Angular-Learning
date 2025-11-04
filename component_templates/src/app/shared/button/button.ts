@@ -8,5 +8,4 @@ import { Component ,Input } from '@angular/core';
 })
 export class Button {
   @Input({required:true}) buttonName! : string;
-
 }

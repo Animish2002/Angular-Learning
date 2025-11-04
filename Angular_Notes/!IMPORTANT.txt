@@ -14,6 +14,8 @@ d. 2 way binding (used within form inputs) allows to listen on changes and also 
 angular.json ensures that the Angular CLI knows how to build your application, 
 which environments to use, and what optimizations to apply.
 
+ng-content is like a placeholder inside a component’s template —
+it tells Angular where to insert the content that comes from the parent component.
 
 ngModel
 ngContent

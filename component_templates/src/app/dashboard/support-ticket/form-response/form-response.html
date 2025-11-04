@@ -1,0 +1,9 @@
+<div *ngIf="data; else noData">
+  <h2>Form Response</h2>
+  <p><strong>Title:</strong> {{ data.title }}</p>
+  <p><strong>Request:</strong> {{ data.request }}</p>
+</div>
+
+<ng-template #noData>
+  <p>No form submitted yet.</p>
+</ng-template>

@@ -1,3 +1,7 @@
-<div id="new-ticket">
-  <app-new-tickets />
+<div class="support-ticket">
+  <app-new-tickets (formSubmit)="handleTicketSubmit($event)"></app-new-tickets>
+
+
 </div>
+
+  <app-form-response [data]="formData"></app-form-response>

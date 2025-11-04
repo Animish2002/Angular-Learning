@@ -10,6 +10,9 @@ import { SupportTicket } from './dashboard/support-ticket/support-ticket';
 import { DashboardItem } from './dashboard/dashboard-item/dashboard-item';
 import { NewTickets } from './dashboard/support-ticket/new-tickets/new-tickets';
 import { Button } from './shared/button/button';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FormResponse } from './dashboard/support-ticket/form-response/form-response';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,15 @@ import { Button } from './shared/button/button';
     SupportTicket,
     DashboardItem,
     NewTickets,
-    Button
+    Button,
+    FormResponse,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
