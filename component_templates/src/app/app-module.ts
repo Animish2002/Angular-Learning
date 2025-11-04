@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './header/header';
-import { ServerStatus } from './server-status/server-status';
-import { Traffic } from './traffic/traffic';
-import { SupportTicket } from './support-ticket/support-ticket';
+import { ServerStatus } from './dashboard/server-status/server-status';
+import { Traffic } from './dashboard/traffic/traffic';
+import { SupportTicket } from './dashboard/support-ticket/support-ticket';
 
 @NgModule({
   declarations: [

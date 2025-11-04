@@ -16,11 +16,16 @@ but instead use it in this way know as
 
 
 Dynamic data passing is also known as data binding and it has types
-1. One Way Data-Binding (data flows in a single direction i.e [Component to DOM] with Interpolation)
-    a. Property Binding
-     => Achieved with square brackets   
-    b. Event Binding
-     => Done for events with $ sign event {$event}
+1. One Way Data-Binding (data flows in a single direction i.e [Component to DOM])
+    a. Interpolation
+     => Passing data from component to HTML {{ title }},Works with text content only (not attributes).
 
-2. Two Way Data-Binding (data flows in 2 direction i.e [Component to View to Component] with ngModel directive)
+    b. Property Binding
+     => Achieved with square brackets [] added inside attributes <img [src] = "imageUrl" />
+     
+    c. Event Binding [DOM → Component]
+     => Uses parentheses ( ). Done for events with $ sign event {$event}
+     <button (click)="handleClick($event)">Click me</button>
+
+2. Two Way Data-Binding (data flows in 2 direction i.e [Component -> View -> Component] with ngModel directive)
 
