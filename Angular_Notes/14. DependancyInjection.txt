@@ -1,3 +1,6 @@
+If we create some methods/functions inside the component class itself, 
+that can be added as a separate service altogether…
+
 Angular has a Dependency Injection system built into its Injector mechanism.
 
 A shared dependency is something that:
@@ -11,5 +14,12 @@ A shared dependency is something that:
 | **Injection**     | Providing that dependency automatically.                         |
 | **@Injectable()** | Marks a class as available for DI.                               |
 | **Injector**      | The system responsible for creating and delivering dependencies. |
+| `providedIn: 'root'`                         | Makes the service app-wide (singleton)               |
+| `constructor(private logger: LoggerService)` | Asks Angular to inject it                            |
+| `this.logger.logMessage()`                   | Uses the injected service method                     |
 
+
+@Injectable decorator tells angular that this class can be used as a dependancy 
+
+constructor to inject the dependancy in the component 
 An example of shared service can be AuthService

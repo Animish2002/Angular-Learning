@@ -7,6 +7,9 @@ import { Header } from './header/header';
 import { ServerStatus } from './dashboard/server-status/server-status';
 import { Traffic } from './dashboard/traffic/traffic';
 import { SupportTicket } from './dashboard/support-ticket/support-ticket';
+import { DashboardItem } from './dashboard/dashboard-item/dashboard-item';
+import { NewTickets } from './dashboard/support-ticket/new-tickets/new-tickets';
+import { Button } from './shared/button/button';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { SupportTicket } from './dashboard/support-ticket/support-ticket';
     Header,
     ServerStatus,
     Traffic,
-    SupportTicket
+    SupportTicket,
+    DashboardItem,
+    NewTickets,
+    Button
   ],
   imports: [
     BrowserModule,

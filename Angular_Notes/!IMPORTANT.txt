@@ -15,3 +15,7 @@ angular.json ensures that the Angular CLI knows how to build your application,
 which environments to use, and what optimizations to apply.
 
 
+ngModel
+ngContent
+ngFor
+ngIf
