@@ -1,11 +1,4 @@
 -main.ts file compiles the whole code into js file
-
--and that complied code is passed in the index.html main file , and it is done 
- by angular CLI it injects the code in the html file.
-
--for new project created in main.ts file the App component is been passed 
-and inside of App component there is component been created a custom HTML Element
-
 @Component contains some decelarations used by angular
 1. HTML template that controls  what renders in the DOM
 2. CSS selector => defines how the component is used in HTML
@@ -37,3 +30,23 @@ RouterOutlet is a directive/component provided by Angular Router that acts as a 
            Think of it as a “screen area” where your pages appear when you navigate.
 
     ********** RouterOutlet itself doesn’t define routes, but it’s the place where routes are displayed.********
+
+
+With Angular module based components the application executes in this way
+
+1. first the main.ts is loaded where it points to the app.module file with bootstrapModule
+2. the bootstrapModule contins all the different components imports and Imports of other 
+   Angular modules (BrowserModule, FormsModule, etc.)
+3. then the index.html is executed where the <app-root/> is called to render the app component
+4. which in html might contain other components like header, sidebar and footer inside with there selectors
+
+In short flow will be =>
+main.ts
+   ↓
+AppModule
+   ↓
+index.html
+   ↓
+<app-root> → AppComponent
+   ↓
+<app-header>, <app-sidebar>, <app-footer> (and other child components)

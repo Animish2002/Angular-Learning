@@ -1,0 +1,24 @@
+Directives tell angular how to manipulate, modify, or extend the behaviour or appearance of elements
+
+3 different types of Directives
+
+1. Component Directives
+=> @Component({
+  selector: 'app-hello',
+  template: `<h1>Hello!</h1>`
+})
+export class HelloComponent {}
+
+
+here app-hello is an directives
+
+
+2. Structural Directives
+=> *ngIf → conditionally render elements
+   *ngFor → loop over lists
+   *ngSwitch → switch between views
+
+3. Attribute Directives
+=> change the appearance or behavior of existing elements or components.
+  *ngClass
+  *ngStyle

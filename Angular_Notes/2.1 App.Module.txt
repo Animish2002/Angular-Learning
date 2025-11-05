@@ -1,0 +1,21 @@
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+here ngModule tells angular this is an angular module
+- decelarations => contains all the components we create, with pipes, 
+- imports => contains other modules that are used in the code ex ngFor, ngIf from Common Module
+- providers => here we define services that can be used within complete application
+- bootstrap => tells angular which component to load first

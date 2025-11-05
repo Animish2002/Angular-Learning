@@ -1,0 +1,15 @@
+div{
+    padding: 30px;
+    background-color: #380774;
+    color: #decdf2;
+}
+
+span{
+     display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: auto;
+    margin-right: auto;
+}

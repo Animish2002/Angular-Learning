@@ -1,0 +1,5 @@
+<!-- child to parent -->
+<app-profile-form (userProfile)="onSubmitForm($event)"></app-profile-form>
+
+<!-- parent to child -->
+<app-profile-info [userProfile]="userInfo"></app-profile-info>

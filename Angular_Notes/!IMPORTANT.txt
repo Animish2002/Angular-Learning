@@ -19,5 +19,7 @@ it tells Angular where to insert the content that comes from the parent componen
 
 ngModel
 ngContent
-ngFor
-ngIf
+*ngFor
+*ngIf
+ngClass 
+ngStyle
