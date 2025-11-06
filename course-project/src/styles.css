@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+Source - https://stackoverflow.com/questions/13107118/how-to-remove-the-arrows-from-inputtype-number-in-opera
+Posted by JayD
+Retrieved 2025-11-06, License - CC BY-SA 4.0
+*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

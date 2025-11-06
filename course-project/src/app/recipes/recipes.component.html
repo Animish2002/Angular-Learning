@@ -1,1 +1,9 @@
-<p>recipes works!</p>
+<div class="row">
+  <div class="col-md-5">
+    <!-- send data via  property binding -->
+    <app-recipe-list [recipes]="recipes"></app-recipe-list>
+  </div>
+  <div class="col-md-7">
+    <app-recipe-detail></app-recipe-detail>
+  </div>
+</div>
