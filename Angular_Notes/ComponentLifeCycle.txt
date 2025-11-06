@@ -1,6 +1,38 @@
 The different 4 phases of a angular component lifecycle are
-a. Creation
-b. Change Detection
-c. Rendering
+a. Creation = the component is been initialized at the start(creates the component instance, injects dependencies, and prepares it for rendering)
+b. Change Detection = continuously checks for the changes or updates in the dom
+c. Rendering = renders the changes onto the dom
 d. Destruction = runs once before the component is destroyed
      
+
+*Hooks called during these phases
+
+a. creation => ngOnChanges, ngOnInit
+b. changeDetection => ngDoCheck, ngAfterContentChecked, ngAfterViewChecked
+c. renderingPhase => ngAfterContenInit, ngAfterViewInit
+d. destruction => ngOnDestroy.
+
+*Visual Timeline
+    Component Creation
+        ↓
+    ngOnChanges()
+        ↓
+    ngOnInit()
+        ↓
+    ngDoCheck()
+        ↓
+    ngAfterContentInit()
+        ↓
+    ngAfterContentChecked()
+        ↓
+    ngAfterViewInit()
+        ↓
+    ngAfterViewChecked()
+        ↓
+    (Change Detection Happens Again)
+        ↓
+    ngOnDestroy()  ← when component is removed
+
+
+Changes → Init → DoCheck → Content → View → Destroy
+👉 C - I - D - C - V - D
