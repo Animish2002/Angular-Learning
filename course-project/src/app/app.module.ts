@@ -12,6 +12,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight-directive';
+import { DropdownDirective } from './shared/dropdown-drivative';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CommonModule } from '@angular/common';
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    BasicHighlightDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

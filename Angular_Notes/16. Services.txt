@@ -1,0 +1,51 @@
+services in angular are code that can be injected anywhere inside our application to 
+achieve reuseabilty of that function or logic
+Mainly used for =>
+- Business logic
+- Data management
+- Reusable functions
+- API calls (HTTP requests)
+
+It is been achieved using Dependencies Injection
+
+
+1. Create a Service 
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'  // tells Angular this service is available app-wide
+})
+export class LoggerService {
+  log(message: string) {
+    console.log('LOG:', message);
+  }
+}
+
+2. Inject into a component 
+import { Component } from '@angular/core';
+import { LoggerService } from './logger.service';
+
+@Component({
+  selector: 'app-example',
+  template: `<button (click)="doSomething()">Click</button>`
+})
+export class ExampleComponent {
+  constructor(private logger: LoggerService) {}  // Angular injects it
+
+  doSomething() {
+    this.logger.log('Button clicked!');
+  }
+}
+
+
+@Injectable() means this class can be injected as a service
+✅ providedIn: 'root' means it can be used anywhere in the app
+
+Two ways to provide a Service
+1. providedIn: 'root' → one instance for whole app
+2. providers: [ServiceName] in a component → new instance for that component & its children only
+
+Two ways to Inject a Service
+    1. using constructor => constructor(private logger: LoggerService) {}
+    2. using inject => private logger = inject(LoggerService);  
+//Both give you the same service instance

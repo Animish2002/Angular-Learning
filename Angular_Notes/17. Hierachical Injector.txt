@@ -1,0 +1,11 @@
+Injector 
+
+App Module => same instance of service is available Application-wide
+AppComponent => Same instance of service is available for all components (but not for other services)
+AnyOtherComponent => Same instance of service is available for the component and all its child components
+
+
+Hierarchical Injector (simple meaning)
+-Angular has levels of injectors
+-If service is not found in child → it checks parent → then app level
+-Like a tree, child → parent → root

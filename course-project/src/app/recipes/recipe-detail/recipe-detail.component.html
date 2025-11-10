@@ -1,21 +1,14 @@
-<div class="col-md-5">
-  <h2>Recipe Name</h2>
-  <div>
-    <ul style="list-style: none;">
-      <li>
-        <a
-          class="nav-link dropdown-toggle fw-semibold px-2 py-2 bg-primary text-white rounded"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          style="width: 55%;"
-        >
-          Manage Recipe
-        </a>
-      </li>
-      <li>Description</li>
-      <li>Description</li>
-    </ul>
-  </div>
+<div *ngIf="recipe; else noSelection">
+  <h2>{{ recipe.name }}</h2>
+  <p>{{ recipe.description }}</p>
+  <img
+    [src]="recipe.imagePath"
+    alt="{{ recipe.name }}"
+    class="img-fluid rounded"
+    style="max-width: 300px"
+  />
 </div>
+
+<ng-template #noSelection>
+  <p>Please select a recipe to view details.</p>
+</ng-template>
