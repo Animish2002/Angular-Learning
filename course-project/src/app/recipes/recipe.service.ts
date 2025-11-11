@@ -27,12 +27,15 @@ export class RecipeService {
   {
     name: 'Healthy Salad',
     description: 'Filled and mixed with all the goodness of healthy and fresh salad',
-    imagePath: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd'
+    imagePath: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd',
+    ingredients: [{name: 'Orange', amount: 5 }, {name: 'Banana', amount: 2 }]
   },
   {
     name: 'Hazelnut Latte',
     description: 'A delicious and healthy drink made with hazelnuts and milk',
-    imagePath: 'https://images.unsplash.com/photo-1495774856032-8b90bbb32b32'
+    imagePath: 'https://images.unsplash.com/photo-1495774856032-8b90bbb32b32',
+    ingredients: [{name: 'Hazelnut', amount: 1}, {name: 'Milk', amount: 2}]
+
   }
 ];
   getRecipes() {

@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight-directive';
 import { DropdownDirective } from './shared/dropdown-drivative';
+import { ShoppingListService } from './shopping-list/shoppingList.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { DropdownDirective } from './shared/dropdown-drivative';
     FormsModule,
     CommonModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
