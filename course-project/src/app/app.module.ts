@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight-directive';
 import { DropdownDirective } from './shared/dropdown-drivative';
 import { ShoppingListService } from './shopping-list/shoppingList.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { ShoppingListService } from './shopping-list/shoppingList.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

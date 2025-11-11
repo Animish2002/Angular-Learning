@@ -1,0 +1,37 @@
+Angular has an in-built Router module used for navigation between pages
+ (components) in a Single Page Application (SPA).
+
+we have a different routes file (usually app-routing.module.ts) where we pass the routes in the form of an array of onjects assets
+
+[
+    {path:"users", component:ComponentName},
+    {path:"data", component: ComponentName}
+]
+can also use redirectTo:"recipe" to redirect from the page
+
+and for navigating in pages to other pages
+
+for the link we use
+//Static Link
+routerLink="/path" ,
+with property binding for dynamic routes
+//Dynamic Link
+[routerLink] = ["/users", userId]    
+   
+also passing in using router-outlet selector for the links 
+
+paths are absolute path vs relative path 
+On page users you click buttont with 2 type of path declaration 
+absolute path = /users
+relative path = users  => means /users/users 
+
+to hightlight the link or route you are on we use routerLinkActive="active"  as active and use css to change the css property       
+
+| Concept             | Description                           |
+| ------------------- | ------------------------------------- |
+| `RouterModule`      | Enables routing functionality         |
+| `Routes` array      | Defines path-component mappings       |
+| `routerLink`        | Template navigation                   |
+| `router.navigate()` | TS-based navigation                   |
+| `redirectTo`        | Redirects one route to another        |
+| `<router-outlet>`   | Placeholder for the current component |

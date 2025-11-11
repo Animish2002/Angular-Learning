@@ -23,5 +23,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .p-10{
-  padding: 40px;
+  padding: 50px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
