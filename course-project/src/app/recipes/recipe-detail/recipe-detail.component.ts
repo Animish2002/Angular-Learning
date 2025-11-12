@@ -1,31 +1,50 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit,inject } from '@angular/core';
 import { Recipe } from '../recipe.model';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.css']
+  styleUrls: ['./recipe-detail.component.css'],
 })
-export class RecipeDetailComponent {
-onDeleteRecipe() {
-throw new Error('Method not implemented.');
-}
-onEditRecipe() {
-throw new Error('Method not implemented.');
-}
+export class RecipeDetailComponent implements OnInit {
+  onDeleteRecipe() {
+    throw new Error('Method not implemented.');
+  }
+  onEditRecipe() {
+    throw new Error('Method not implemented.');
+  }
   @Input() recipe: Recipe | null = null;
 
-isDropdownOpen = false;
+  isDropdownOpen = false;
 
-toggleDropdown() {
-  this.isDropdownOpen = !this.isDropdownOpen;
+  constructor(private route: ActivatedRoute) {}
+
+   
+   private recipeData = inject(RecipeService);
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  onAddToShoppingList() {
+    this.isDropdownOpen = false;
+    // your logic
+  }
+
+ngOnInit() {
+  const id = +this.route.snapshot.params['id'];
+  this.recipe = this.recipeData.getRecipe(id);
+
+  this.route.params.subscribe((params) => {
+    const newId = +params['id'];
+    this.recipe = this.recipeData.getRecipe(newId);
+  });
 }
 
-onAddToShoppingList() {
-  this.isDropdownOpen = false;
-  // your logic
-}
 
-disableSelect = new FormControl(false);
+
+  disableSelect = new FormControl(false);
 }

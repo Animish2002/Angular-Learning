@@ -12,10 +12,13 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight-directive';
-import { DropdownDirective } from './shared/dropdown-drivative';
+
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
+import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 @NgModule({
@@ -28,7 +31,8 @@ import {MatSelectModule} from '@angular/material/select';
     ShoppingListComponent,
     ShoppingEditComponent,
     BasicHighlightDirective,
-    DropdownDirective
+    EditRecipeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
-    MatSelectModule
+    MatSelectModule,
+    
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

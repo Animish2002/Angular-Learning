@@ -1,6 +1,7 @@
 import { Ingredients } from "../shopping-list/ingredients.model";
 
 export interface Recipe {
+  id: number,
   name: string;
   description: string;
   imagePath: string;

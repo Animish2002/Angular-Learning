@@ -35,3 +35,14 @@ to hightlight the link or route you are on we use routerLinkActive="active"  as 
 | `router.navigate()` | TS-based navigation                   |
 | `redirectTo`        | Redirects one route to another        |
 | `<router-outlet>`   | Placeholder for the current component |
+
+
+
+dynamically load data by id from one page to another 
+1️⃣ Angular reads the id from the URL using ActivatedRoute.
+2️⃣ The snapshot takes that id once when the component loads.
+3️⃣ The service (ServersService) uses that id to fetch the correct server.
+4️⃣ The server data is shown in the HTML, and params.subscribe() updates it if the URL id changes.
+
+can create children routes as well for routes with the same endpoint
+Ex :[ users ] , [ users/:id/edit ]
