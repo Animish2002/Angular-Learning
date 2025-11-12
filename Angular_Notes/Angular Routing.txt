@@ -1,0 +1,73 @@
+⚡ Angular Routing – Quick Review Notes
+
+🔹 What is Routing?
+Routing in Angular is used to move between different components (pages) in a single-page application without reloading the whole page.
+
+---
+
+🔹 Basic Setup
+You define routes in your app so Angular knows which component to show for each URL.
+Example:
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users/:id/:name', component: UserComponent },
+  { path: '**', component: PageNotFoundComponent } // 404
+];
+
+→ '**' means a wildcard route, used when no other route matches (shows 404 page).
+
+---
+
+🔹 Navigation
+You can move between routes using routerLink or programmatically.
+Example:
+<a [routerLink]="['/users', 1, 'Max']">User 1</a>
+
+Programmatic navigation (in TS):
+this.router.navigate(['/users', id, name]);
+
+---
+
+🔹 Query Parameters & Fragments
+Query parameters and fragments help pass extra info through the URL.
+For example, query params can tell if editing is allowed, and fragments point to a section on the page.
+
+<button
+  [routerLink]="['/servers', 5, 'edit']"
+  [queryParams]="{ allowEdit: '1' }"
+  fragment="loading">
+  Edit Server
+</button>
+
+→ URL becomes: /servers/5/edit?allowEdit=1#loading
+
+To read these in your component:
+this.route.queryParams.subscribe();
+this.route.fragment.subscribe();
+
+---
+
+🔹 Dynamic Data Loading
+Dynamic routing allows components to change data based on the route parameter (like user id).
+this.route.params.subscribe(params => this.serverId = params['id']);
+→ The DOM updates automatically when the id changes in the route.
+
+---
+
+🔹 Route Guards (Protect Routes)
+Guards control access to certain routes, such as pages that require login.
+Example:
+{ path: 'servers', canActivate: [AuthGuard], component: ServersComponent }
+
+→ The guard returns true or false. If false, navigation is blocked (user not allowed).
+
+---
+
+✅ Summary:
+- routerLink → navigate between components
+- queryParams & fragment → pass extra info in URL
+- params → load dynamic data by id or name
+- '**' → wildcard for 404 not found route
+- Guards → protect routes (like login required)
+
+Routing makes your Angular app dynamic, secure, and user-friendly 🚀

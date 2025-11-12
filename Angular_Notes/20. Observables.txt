@@ -1,0 +1,55 @@
+🔹 Angular Observables Notes
+
+➡ What is an Observable?
+- Observable is a feature from RxJS used to handle asynchronous data streams.
+- It helps us work with data that changes over time like HTTP calls, user inputs, etc.
+
+➡ Why use Observables?
+- They provide better control over async tasks.
+- We can subscribe, react, and unsubscribe easily.
+- They are used heavily in Angular (HTTP requests, routing params, form changes).
+
+➡ Basic Terms:
+- Observable → The data source (emits values)
+- Observer → The one who listens to emitted values
+- Subscription → Connection between Observable & Observer
+- Operators → Functions used to transform or filter data
+- Subject → Special type of Observable that can multicast to many observers
+
+➡ Common Methods:
+- .subscribe() → Used to listen to Observable values
+- .unsubscribe() → Stops listening to prevent memory leaks
+
+➡ Example:
+import { Observable } from 'rxjs';
+
+const observable = new Observable(observer => {
+  observer.next('Data 1');
+  observer.next('Data 2');
+  observer.complete();
+});
+
+observable.subscribe({
+  next: data => console.log(data),
+  complete: () => console.log('Done!')
+});
+
+
+
+➡ Common RxJS Operators:
+- map() → Transforms each emitted value
+- filter() → Filters out unwanted values
+- debounceTime() → Adds delay (useful in search)
+- switchMap() → Switches to new observable, cancels previous one
+- take() → Takes limited values and completes
+
+➡ In Angular:
+- Used in services (like HttpClient)
+- Used with route params → this.route.params.subscribe()
+- Used in reactive forms → form.valueChanges.subscribe()
+
+➡ Unsubscribing:
+- Always unsubscribe in ngOnDestroy() to avoid memory leaks
+- OR use takeUntil() / async pipe in templates
+
+➡ Example in Routing:
