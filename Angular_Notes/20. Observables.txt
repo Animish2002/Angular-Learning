@@ -52,4 +52,8 @@ observable.subscribe({
 - Always unsubscribe in ngOnDestroy() to avoid memory leaks
 - OR use takeUntil() / async pipe in templates
 
-➡ Example in Routing:
+Summary:
+Observables = async data streams.
+Observer = listens.
+Subscription = connection.
+Unsubscribe = safety.
