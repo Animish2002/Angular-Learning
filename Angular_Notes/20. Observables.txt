@@ -19,7 +19,7 @@
 - Observer → The one who listens to emitted values
 - Subscription → Connection between Observable & Observer
 - Operators → Functions used to transform or filter data
-- Subject → Special type of Observable that can multicast to many observers
+- Subject → Special type of Observable that can multicast to many observers 
 
 ➡ Common Methods:
 - .subscribe() → Used to listen to Observable values

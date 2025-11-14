@@ -13,3 +13,16 @@ and disable the submit button using property binding [disabled] = "!f.valid" //c
 
 attach default values with [ngModel]="" setting the value to empty and then passing the value inside "defaultValue"
 
+
+
+| Part                    | Purpose                         |
+| ----------------------- | ------------------------------- |
+| **FormControl**         | Single form field               |
+| **FormGroup**           | Whole form (object of controls) |
+| **FormArray**           | Dynamic list of controls        |
+| **Validators**          | Check if inputs are valid       |
+| **formControlName**     | Connects input to TS control    |
+| **formGroup**           | Connects entire form            |
+| **formArrayName**       | Connects dynamic array          |
+| **ReactiveFormsModule** | Required module                 |
+| **valueChanges**        | Listen to changes               |
