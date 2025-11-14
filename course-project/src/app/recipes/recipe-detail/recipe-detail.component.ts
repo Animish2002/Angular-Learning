@@ -1,7 +1,6 @@
-import { Component, Input, OnInit,inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Recipe } from '../recipe.model';
-import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 
 @Component({
@@ -10,41 +9,42 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-detail.component.css'],
 })
 export class RecipeDetailComponent implements OnInit {
-  onDeleteRecipe() {
-    throw new Error('Method not implemented.');
-  }
-  onEditRecipe() {
-    throw new Error('Method not implemented.');
-  }
   @Input() recipe: Recipe | null = null;
 
-  isDropdownOpen = false;
+  private recipeService = inject(RecipeService);
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
-   
-   private recipeData = inject(RecipeService);
+  ngOnInit() {
+    const id = +this.route.snapshot.params['id'];
+    this.recipe = this.recipeService.getRecipe(id);
 
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
+    this.route.params.subscribe((params) => {
+      const newId = +params['id'];
+      this.recipe = this.recipeService.getRecipe(newId);
+    });
+  }
+
+  onActionSelected(action: string) {
+    switch (action) {
+      case 'shopping':
+        this.onAddToShoppingList();
+        break;
+      case 'edit':
+        this.onEditRecipe();
+        break;
+    }
   }
 
   onAddToShoppingList() {
-    this.isDropdownOpen = false;
-    // your logic
+    console.log('Added to shopping list');
+    this.router.navigate(['/recipes']);
+    // Add your logic
   }
 
-ngOnInit() {
-  const id = +this.route.snapshot.params['id'];
-  this.recipe = this.recipeData.getRecipe(id);
-
-  this.route.params.subscribe((params) => {
-    const newId = +params['id'];
-    this.recipe = this.recipeData.getRecipe(newId);
-  });
-}
+  onEditRecipe() {
+    this.router.navigate(['/recipes/new']);
+  }
 
 
-
-  disableSelect = new FormControl(false);
 }

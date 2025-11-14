@@ -18,14 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { DropdownDirective } from './shared/dropdown-drivative';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownDirective,
+
     HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
