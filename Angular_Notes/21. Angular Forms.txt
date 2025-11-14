@@ -1,0 +1,15 @@
+Angular has FormsModule  which can be  used to use  
+ngForm to recieve the data/inputs entired by the user without the need of decorators 
+
+we directly get the ngForm object inside that has values which contains all the forms key value pair 
+entries
+
+need to added ngModel and name="email" fields for angular forms
+
+also can add validation and required to the input filds along with other features like 
+
+input field border red when entires are wrong
+and disable the submit button using property binding [disabled] = "!f.valid" //checks if form entires are valid
+
+attach default values with [ngModel]="" setting the value to empty and then passing the value inside "defaultValue"
+

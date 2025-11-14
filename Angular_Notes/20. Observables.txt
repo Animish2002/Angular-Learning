@@ -4,6 +4,11 @@
 - Observable is a feature from RxJS used to handle asynchronous data streams.
 - It helps us work with data that changes over time like HTTP calls, user inputs, etc.
 
+“Observables in Angular are a core way to handle asynchronous data streams. They allow us to receive multiple
+ values over time, listen to real-time changes, and cancel the subscription when we no longer need the data. 
+ Angular uses Observables for HTTP calls, routing parameters, form value changes, and many async operations 
+ because they are more flexible and powerful than Promises.”
+
 ➡ Why use Observables?
 - They provide better control over async tasks.
 - We can subscribe, react, and unsubscribe easily.
