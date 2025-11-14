@@ -9,18 +9,15 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight-directive';
 
 import { ShoppingListService } from './shopping-list/shoppingList.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -34,7 +31,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ShoppingEditComponent,
     BasicHighlightDirective,
     EditRecipeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +40,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CommonModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    
+    ReactiveFormsModule,
   ],
   providers: [ShoppingListService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
