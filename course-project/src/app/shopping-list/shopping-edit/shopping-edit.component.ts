@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ShoppingListService } from '../shoppingList.service';
 import { NgForm } from '@angular/forms';
 import { Ingredients } from '../ingredients.model';
@@ -8,11 +8,17 @@ import { Ingredients } from '../ingredients.model';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css'],
 })
-export class ShoppingEditComponent {
+export class ShoppingEditComponent implements OnInit, OnDestroy {
   private shoppingListService = inject(ShoppingListService);
   name: string = '';
   amount: number = 0;
 
+  ngOnInit() {
+   
+  }
+  ngOnDestroy() {
+    this.shoppingListService.ingredientAdded.unsubscribe();
+  }
   onAddItem(form: NgForm) {
     const value = form.value;
     const newIngredient: Ingredients = {
