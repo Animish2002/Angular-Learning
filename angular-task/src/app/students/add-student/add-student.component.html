@@ -1,0 +1,31 @@
+<form #f="ngForm" class="form" (ngSubmit)="onSubmit(f)">
+  <h1>Add Student</h1>
+  <div>
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput ngModel name="firstname" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput ngModel name="lastname" required />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input matInput ngModel name="age" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Subjects</mat-label>
+      <input matInput ngModel name="subject" required />
+    </mat-form-field>
+  </div>
+
+  <div class="example-button-row">
+    <button mat-flat-button color="primary" [disabled]="f.invalid">Submit</button>
+  </div>
+
+  <div *ngIf="message" [ngClass]="{ success: !isError, error: isError }">
+    {{ message }}
+  </div>
+</form>

@@ -1,0 +1,35 @@
+.teachers-list {
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+@media (max-width: 1068px) {
+  .teachers-list {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teachers-list {
+    max-width: 560px;
+    margin: auto;
+    margin-top: 30px;
+  }
+}
+
+.search {
+  margin-left: 10px;
+}
+
+.actions {
+  margin-left: 10px;
+}
+
+.search-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

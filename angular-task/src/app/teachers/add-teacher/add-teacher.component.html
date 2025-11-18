@@ -1,0 +1,27 @@
+<form #f="ngForm" class="form" (ngSubmit)="onAdd(f)">
+  <h1>Add Teacher</h1>
+  <div>
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput ngModel name="firstname" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput ngModel name="lastname" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input matInput ngModel name="age" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Subjects</mat-label>
+      <input matInput ngModel name="subject" />
+    </mat-form-field>
+  </div>
+
+  <div class="example-button-row">
+    <button mat-flat-button color="primary">Submit</button>
+  </div>
+</form>

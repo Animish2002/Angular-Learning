@@ -1,0 +1,89 @@
+<section class="students-list">
+  <h1>Students List</h1>
+  <div class="search-filters">
+    <div>
+      <mat-form-field>
+        <mat-label>Select to filer</mat-label>
+        <mat-select>
+          <mat-option> By AGE</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="search" appearance="fill">
+        <mat-label>Search by name</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Search..."
+          ngModel
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        class="search"
+        (click)="onAdd()"
+      >
+        Add student
+      </button>
+    </div>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let a">{{ a.id }}</td>
+    </ng-container>
+
+    <!-- First Name -->
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let t">{{ t.firstname }}</td>
+    </ng-container>
+
+    <!-- Last Name -->
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let t">{{ t.lastname }}</td>
+    </ng-container>
+
+    <!-- Age -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef>Age</th>
+      <td mat-cell *matCellDef="let t">{{ t.age }}</td>
+    </ng-container>
+
+    <!-- Subject -->
+    <ng-container matColumnDef="subject">
+      <th mat-header-cell *matHeaderCellDef>Subject</th>
+      <td mat-cell *matCellDef="let t">{{ t.subjects.join(", ") }}</td>
+    </ng-container>
+
+    <!-- Edit -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let t">
+        <button mat-stroked-button color="primary" (click)="onEdit(t)">
+          Edit
+        </button>
+
+        <button
+          mat-stroked-button
+          color="warn"
+          class="actions"
+          (click)="onDelete(t.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <router-outlet></router-outlet>
+</section>
