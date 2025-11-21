@@ -1,4 +1,4 @@
-import { Component, OnInit ,inject} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 import { Router } from '@angular/router';
@@ -11,18 +11,24 @@ import { Router } from '@angular/router';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [];
 
+  
+
   private recipeService = inject(RecipeService);
   private router = inject(Router);
 
   ngOnInit() {
-    this.recipes = this.recipeService.getRecipes();
+    this.recipes = this.recipeService.getRecipes(); // initial load
+
+    this.recipeService.recipesChanged.subscribe((updatedRecipes) => {
+      this.recipes = updatedRecipes;
+    });
   }
 
   onSelectRecipe(recipe: Recipe) {
     this.recipeService.recipeSelected.next(recipe);
   }
 
-  onClick(){
+  onClick() {
     this.router.navigate(['/recipes/new']);
   }
 }

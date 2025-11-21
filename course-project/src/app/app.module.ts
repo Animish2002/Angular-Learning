@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthComponent } from './auth/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BasicHighlightDirective,
     EditRecipeComponent,
     PageNotFoundComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

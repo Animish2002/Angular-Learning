@@ -5,7 +5,6 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-
 export class RecipeService {
   //with class defination in class based model
   // private recipes: Recipe[] = [
@@ -25,45 +24,79 @@ export class RecipeService {
 
   //with interface
   private recipes: Recipe[] = [
-  {
-    id: 1,
-    name: 'Healthy Salad',
-    description: 'Filled and mixed with all the goodness of healthy and fresh salad',
-    imagePath: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd',
-    ingredients: [{name: 'Orange', amount: 5 }, {name: 'Banana', amount: 2 }]
-  },
-  {
-    id: 2,
-    name: 'Hazelnut Latte',
-    description: 'A delicious and healthy drink made with hazelnuts and milk',
-    imagePath: 'https://images.unsplash.com/photo-1495774856032-8b90bbb32b32',
-    ingredients: [{name: 'Hazelnut', amount: 1}, {name: 'Milk', amount: 2}]
-  },
-  {
-    id: 3,
-    name: 'Avocado Toast',
-    description: 'A delicious and healthy breakfast made with avocado and toast',
-    imagePath: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd',
-    ingredients: [{name: 'Avocado', amount: 2}, {name: 'Bread', amount: 1}]
-  },
-  {
-    id: 4,
-    name: 'Quinoa Salad',
-    description: 'A delicious and healthy salad made with quinoa and vegetables',
-    imagePath: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd',
-    ingredients: [{name: 'Quinoa', amount: 1}, {name: 'Vegetables', amount: 5}]
-  }
-];
+    {
+      id: 1,
+      name: 'Healthy Salad',
+      description:
+        'Filled and mixed with all the goodness of healthy and fresh salad',
+      imagePath: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd',
+      ingredients: [
+        { name: 'Orange', amount: 5 },
+        { name: 'Banana', amount: 2 },
+      ],
+    },
+    {
+      id: 2,
+      name: 'Hazelnut Latte',
+      description: 'A delicious and healthy drink made with hazelnuts and milk',
+      imagePath: 'https://images.unsplash.com/photo-1495774856032-8b90bbb32b32',
+      ingredients: [
+        { name: 'Hazelnut', amount: 1 },
+        { name: 'Milk', amount: 2 },
+      ],
+    },
+    {
+      id: 3,
+      name: 'Avocado Toast',
+      description:
+        'A delicious and healthy breakfast made with avocado and toast',
+      imagePath: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd',
+      ingredients: [
+        { name: 'Avocado', amount: 2 },
+        { name: 'Bread', amount: 1 },
+      ],
+    },
+    {
+      id: 4,
+      name: 'Quinoa Salad',
+      description:
+        'A delicious and healthy salad made with quinoa and vegetables',
+      imagePath: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd',
+      ingredients: [
+        { name: 'Quinoa', amount: 1 },
+        { name: 'Vegetables', amount: 5 },
+      ],
+    },
+  ];
+
+  recipesChanged = new Subject<Recipe[]>();
+
   getRecipes() {
     return this.recipes.slice();
   }
 
   getRecipe(id: number) {
-  return this.recipes[id - 1];
-}
+    return this.recipes[id - 1];
+  }
 
-}
+  addRecipe(recipe: Recipe) {
+    this.recipes.push({
+      ...recipe,
+      id: this.recipes.length + 1,
+    });
 
+    this.recipesChanged.next(this.recipes.slice()); // 🔥 notify components
+  }
+
+  updateRecipe(id: number, newRecipe: Recipe) {
+    const recipeIndex = this.recipes.findIndex((r) => r.id === id);
+
+    if (recipeIndex !== -1) {
+      this.recipes[recipeIndex] = { ...newRecipe, id }; // keep same id
+      this.recipesChanged.next(this.recipes.slice());
+    }
+  }
+}
 
 // User clicks recipe ➜ RecipeListComponent.onSelectRecipe()
 //   ➜ emits event via RecipeService.recipeSelected

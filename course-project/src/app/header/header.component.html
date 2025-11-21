@@ -20,7 +20,15 @@
           <a routerLink="/recipes" class="nav-link">Recipes</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
+          <a routerLink="/auth" class="nav-link">Authenticate</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
           <a routerLink="/shopping-list" class="nav-link">Shopping List</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a routerLink="/shopping-list" 
+            ><button type="submit" class="btn " (click)="onLogout()">Logout</button></a
+          >
         </li>
       </ul>
 

@@ -14,6 +14,7 @@ export class RecipeDetailComponent implements OnInit {
   private recipeService = inject(RecipeService);
 
   constructor(private route: ActivatedRoute, private router: Router) {}
+  id = this.route.snapshot.params['id'];
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
@@ -31,7 +32,7 @@ export class RecipeDetailComponent implements OnInit {
         this.onAddToShoppingList();
         break;
       case 'edit':
-        this.onEditRecipe();
+        this.onEditRecipe(this.id);
         break;
     }
   }
@@ -42,9 +43,7 @@ export class RecipeDetailComponent implements OnInit {
     // Add your logic
   }
 
-  onEditRecipe() {
-    this.router.navigate(['/recipes/new']);
+  onEditRecipe(id: number) {
+    this.router.navigate(['/recipes/' + id + '/edit']);
   }
-
-
 }

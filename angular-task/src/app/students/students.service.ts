@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
   constructor(private http: HttpClient) {}
-  private apiUrl = 'https://691abfca2d8d7855756ffe7e.mockapi.io/api/students';
+    private apiUrl = 'https://691abfca2d8d7855756ffe7e.mockapi.io/api/students';
 
   getStudents() {
     return this.http.get<students[]>(this.apiUrl);
